@@ -1,0 +1,5 @@
+.env
+package-lock.json
+token_file
+michel
+node_modules/*

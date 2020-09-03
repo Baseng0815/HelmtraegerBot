@@ -1,0 +1,19 @@
+{
+  "name": "helmtraeger_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon bot.js",
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
