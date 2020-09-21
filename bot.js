@@ -51,9 +51,9 @@ function processCommand(message) {
 
     const command = commands.commands[primaryCommand];
     if (command) {
-        if (message.channel.type == 'dm') {
-            if (command.guild_only) {
-                message.channel.send(`Command ${primaryCommand} is guild only.`);
+        if (message.channel.type !== 'voice') {
+            if (command.voice_only) {
+                message.channel.send(`Command ${primaryCommand} is voice only.`);
                 return;
             }
         }
