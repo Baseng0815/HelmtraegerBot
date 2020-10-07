@@ -51,13 +51,13 @@ function processCommand(message) {
 
     const command = commands.commands[primaryCommand];
     if (command) {
-        if (message.channel.type !== 'voice') {
-            if (command.voice_only) {
+        if (message.member.voice.channel?.type !== 'voice') {
+            if (command.meta.voice_only) {
                 message.channel.send(`Command ${primaryCommand} is voice only.`);
                 return;
             }
         }
-        command.command(arguments, message);
+        command.func(arguments, message);
     } else {
         message.channel.send(`Command ${primaryCommand} not found.`);
     }
