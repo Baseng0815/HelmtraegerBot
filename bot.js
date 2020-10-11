@@ -1,36 +1,15 @@
 const discord = require('discord.js');
-const commands = require('./commands')
+const commands = require('./commands.js')
 const fs = require('fs');
+const log = require('./log.js');
+const { exec } = require('child_process');
 
 const client = new discord.Client();
 
 require('dotenv').config();
 
-async function tonsOfMessages(channel, limit = 500) {
-    let sum_messages = [];
-    let last_id;
-
-    while (true) {
-        const options = { limit: 100 };
-        if (last_id) {
-            options.before = last_id;
-        }
-
-        const messages = await channel.messages.fetch(options);
-        sum_messages = sum_messages.concat(messages.array());
-        console.log(sum_messages.length);
-        last_id = messages.last().id;
-
-        if (messages.size != 100 || sum_messages.length >= limit) {
-            break;
-        }
-    }
-
-    return sum_messages;
-}
-
 client.on('ready', () => {
-    console.log("Connected as " + client.user.tag);
+    log.logMessage(`INFORM: connected as ${client.user.tag}`);
 
     client.user.setActivity('Nekopara Vol. 0', {type: 'PLAYING'});
 });
@@ -39,6 +18,8 @@ client.on('message', message => {
     if (message.author != client.user) {
         if (message.content.startsWith('!')) {
             processCommand(message);
+        } else {
+            processMessage(message);
         }
     }
 });
@@ -53,13 +34,65 @@ function processCommand(message) {
     if (command) {
         if (message.member.voice.channel?.type !== 'voice') {
             if (command.meta.voice_only) {
+                log.logMessage(`ERROR: command ${primaryCommand} is voice only`);
                 message.channel.send(`Command ${primaryCommand} is voice only.`);
                 return;
             }
         }
+        log.logMessage(`INFORM: process command '${primaryCommand}' from user '${message.author.username}'`);
         command.func(arguments, message);
     } else {
+        log.logMessage(`ERROR: command ${primaryCommand} not found`);
         message.channel.send(`Command ${primaryCommand} not found.`);
+    }
+}
+
+function processMessage(message) {
+    if (message.content.startsWith('https://www.reddit.com/r/')) {
+        // first, get video info
+        exec('youtube-dl --dump-json ' + message.content, (error, stdout, stderr) => {
+            if (error) {
+                log.logMessage(`ERROR: in getting video metadata: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                log.logMessage(`ERROR: in getting video metadata: ${stderr}`);
+                return;
+            }
+
+            try {
+                const info = JSON.parse(stdout);
+                const file = '/tmp/' + info.id + '.mp4';
+                // download video
+                exec(`youtube-dl -o ${file} ${message.content}`, (error, stdout, stderr) => {
+                    if (error) {
+                        log.logMessage(`ERROR: in downloading video to ${file}: ${error.message}`);
+                        return;
+                    }
+                    if (stderr) {
+                        log.logMessage(`ERROR: in downloading video to ${file}: ${stderr}`);
+                        return;
+                    }
+
+                    const stats = fs.statSync(file);
+                    const fileSizeInM = stats.size / 1000000.0
+                    if (fileSizeInM >= 7.8) {
+                        log.logMessage('ERROR: video is larger than 8MB, won\'t send.')
+                        message.channel.send('Video is larger than 8MB, sorry!');
+                        return;
+                    }
+
+                    message.channel.send({ files: [ file ] });
+                    log.logMessage(`INFORM: video ${file} sent`);
+                    message.delete({ timeout: 0 })
+                        .then(msg => log.logMessage(`INFORM: message from user '${msg.author.username}' deleted`));
+                });
+
+            } catch (err) {
+                log.logMessage(`ERROR: ${err}`);
+                return;
+            }
+        });
     }
 }
 

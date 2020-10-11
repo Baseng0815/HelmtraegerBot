@@ -1,8 +1,8 @@
 const discord = require('discord.js');
 
-const leave = require('./leave');
-const autist = require('./autist');
-const faceit = require('./faceit');
+const leave = require('./leave.js');
+const autist = require('./autist.js');
+const faceit = require('./faceit.js');
 
 const manualData = { leave, autist, faceit }
 
