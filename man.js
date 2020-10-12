@@ -3,8 +3,9 @@ const discord = require('discord.js');
 const leave = require('./leave.js');
 const autist = require('./autist.js');
 const faceit = require('./faceit.js');
+const anime = require('./anime.js');
 
-const manualData = { leave, autist, faceit }
+const manualData = { leave, autist, faceit, anime }
 
 function func(arguments, message) {
     const argument = arguments[0];

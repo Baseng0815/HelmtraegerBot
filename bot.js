@@ -4,6 +4,8 @@ const fs = require('fs');
 const log = require('./log.js');
 const { exec } = require('child_process');
 
+log.logMessage('INFORM: loaded commands: ' + Object.keys(commands));
+
 const client = new discord.Client();
 
 require('dotenv').config();
@@ -30,7 +32,7 @@ function processCommand(message) {
     const primaryCommand = splitCommand[0];
     const arguments = splitCommand.slice(1);
 
-    const command = commands.commands[primaryCommand];
+    const command = commands[primaryCommand];
     if (command) {
         if (message.member.voice.channel?.type !== 'voice') {
             if (command.meta.voice_only) {
@@ -82,10 +84,15 @@ function processMessage(message) {
                         return;
                     }
 
-                    message.channel.send({ files: [ file ] });
-                    log.logMessage(`INFORM: video ${file} sent`);
-                    message.delete({ timeout: 0 })
-                        .then(msg => log.logMessage(`INFORM: message from user '${msg.author.username}' deleted`));
+                    message.channel.send({ files: [ file ] })
+                        .then(() => {
+                            log.logMessage(`INFORM: video ${file} sent`);
+                            message.delete({ timeout: 0 })
+                                .then(msg => log.logMessage(`INFORM: message from user '${msg.author.username}' deleted`));
+                            log.logMessage(`INFORM: deleting file ${file}`);
+                            fs.unlinkSync(file);
+                        })
+                        .catch(log.logMessage);
                 });
 
             } catch (err) {
