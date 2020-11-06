@@ -5,6 +5,8 @@ const fs = require('fs');
 const log = require('../../log.js');
 const path = require('path');
 
+const basePath = path.join(__dirname, '..', '..', 'res', 'autist');
+
 class AutistCommand extends Command {
     constructor() {
         super('autist', {
@@ -20,7 +22,7 @@ class AutistCommand extends Command {
                 examples: [ 'list', '3', '' ]
             },
         });
-        fs.readdir('autist', (err, files) => {
+        fs.readdir(basePath, (err, files) => {
             if (err) {
                 log.logMessage(`ERROR: unable to open the autist folder: ${err}`);
                 return;
@@ -52,12 +54,11 @@ class AutistCommand extends Command {
 
             if (this.files.includes(this.files[index])) {
                 // play specific message
-                var filePath = path.join(__dirname, '..', '..','autist', this.files[index]);
+                var filePath = path.join(basePath, this.files[index]);
             } else {
                 // play random message
-                message.channel.send(`File not found. Playing random message.`);
-                log.logMessage(`ERROR: file ${this.files[index]} not found; reverting to random message`)
-                var filePath = path.join(__dirname, '..', '..', 'autist', this.files[Math.floor(Math.random() * this.files.length)]);
+                log.logMessage(`INFORM: file ${this.files[index]} not found; reverting to random message`)
+                var filePath = path.join(basePath, this.files[Math.floor(Math.random() * this.files.length)]);
             }
 
             // join and play

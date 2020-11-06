@@ -21,3 +21,33 @@ Mon Oct 26 2020 17:57:23 GMT+0100 (Central European Standard Time): INFORM: play
 Mon Oct 26 2020 17:57:28 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/autist/autist_purple.wav
 Mon Oct 26 2020 17:57:32 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/autist/are_you_autist.wav
 Mon Oct 26 2020 17:57:35 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/autist/64_tick.wav
+Thu Nov 05 2020 21:54:41 GMT+0100 (Central European Standard Time): ERROR: unable to open the autist folder: Error: ENOENT: no such file or directory, scandir 'autist'
+Thu Nov 05 2020 21:54:58 GMT+0100 (Central European Standard Time): ERROR: unable to open the autist folder: Error: ENOENT: no such file or directory, scandir 'autist'
+Thu Nov 05 2020 21:55:40 GMT+0100 (Central European Standard Time): ERROR: file undefined not found; reverting to random message
+Thu Nov 05 2020 21:55:40 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/dogshit.wav
+Thu Nov 05 2020 21:56:43 GMT+0100 (Central European Standard Time): ERROR: file undefined not found; reverting to random message
+Thu Nov 05 2020 21:56:43 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/baitende_hure.wav
+Thu Nov 05 2020 21:56:46 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/kartoffel.wav
+Thu Nov 05 2020 21:56:51 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/kartoffel.wav
+Thu Nov 05 2020 22:00:41 GMT+0100 (Central European Standard Time): ERROR: file undefined not found; reverting to random message
+Thu Nov 05 2020 22:00:42 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/fucking_idiot_purple.wav
+Thu Nov 05 2020 22:01:26 GMT+0100 (Central European Standard Time): INFORM: file undefined not found; reverting to random message
+Thu Nov 05 2020 22:01:26 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/jens_jesberg.wav
+Thu Nov 05 2020 22:01:29 GMT+0100 (Central European Standard Time): INFORM: playing autist file /home/bastian/HelmtraegerBot/res/autist/fucking_idiot_purple.wav
+Thu Nov 05 2020 22:46:21 GMT+0100 (Central European Standard Time): INFORM: video /tmp/zg6ya8ws0gx51.mp4 sent
+Thu Nov 05 2020 22:46:21 GMT+0100 (Central European Standard Time): INFORM: deleting file /tmp/zg6ya8ws0gx51.mp4
+Thu Nov 05 2020 22:46:21 GMT+0100 (Central European Standard Time): INFORM: message from user 'Shedexx' deleted
+Fri Nov 06 2020 18:05:36 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:05:52 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:06:13 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:06:45 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:06:54 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:06:54 GMT+0100 (Central European Standard Time): INFORM: Loaded 607 roasts
+Fri Nov 06 2020 18:08:00 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:08:00 GMT+0100 (Central European Standard Time): INFORM: Loaded 607 roasts
+Fri Nov 06 2020 18:08:42 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:08:42 GMT+0100 (Central European Standard Time): INFORM: Loaded 607 roasts
+Fri Nov 06 2020 18:09:12 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:09:12 GMT+0100 (Central European Standard Time): INFORM: Loaded 607 roasts
+Fri Nov 06 2020 18:14:48 GMT+0100 (Central European Standard Time): INFORM: Reading roast file...
+Fri Nov 06 2020 18:14:48 GMT+0100 (Central European Standard Time): INFORM: Loaded 605 roasts
