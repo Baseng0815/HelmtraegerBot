@@ -1,6 +1,7 @@
 const { AkairoClient, CommandHandler, InhibitorHandler, ListenerHandler } = require('discord-akairo');
 
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.credentials/.env'});
+require('./yt-auth.js');
 
 class MyClient extends AkairoClient {
     constructor() {
