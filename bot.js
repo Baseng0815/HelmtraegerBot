@@ -39,4 +39,4 @@ class MyClient extends AkairoClient {
 
 const client = new MyClient();
 
-client.login(process.env.TOKEN);
+client.login(process.env.BOT_TOKEN);

@@ -35,7 +35,7 @@ class HelpCommand extends Command {
             .setTitle(command)
             .setColor('#0099ff')
             .addField('Summary', command.description.content)
-            .addField('Usage',   command.description.usage);
+            .addField('Arguments', command.description.usage);
 
         let exampleStr = '';
         for (let example of command.description.examples) {

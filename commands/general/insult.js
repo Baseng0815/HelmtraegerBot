@@ -11,12 +11,18 @@ class RoastCommand extends Command {
             args: [
                 {
                     id: 'user',
-                    type: 'user'
+                    type: 'user',
+                    prompt: {
+                        start: 'Who to insult?',
+                        retry: 'That\'s not a valid user',
+                        retries: 3,
+                        ended: 'Okay, we get it. You are too stupid, so let\'s just stop here.'
+                    }
                 }
             ],
             description: {
                 content: 'Roast someone',
-                usage: '<user>/<>',
+                usage: '<user>?',
                 examples: [ '@Roofussprenger69', '' ]
             },
         });
@@ -40,4 +46,4 @@ class RoastCommand extends Command {
     }
 }
 
-module.exports = RoastCommand
+module.exports = RoastCommand;

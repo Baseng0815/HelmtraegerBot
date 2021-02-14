@@ -18,7 +18,7 @@ class AutistCommand extends Command {
             ],
             description: {
                 content: 'Play some nice sounds',
-                usage: '<list>/<index>/<>',
+                usage: '<list>/<index>?',
                 examples: [ 'list', '3', '' ]
             },
         });

@@ -6,7 +6,7 @@ class PingCommand extends Command {
             aliases: ['ping'],
             description: {
                 content: 'Send back pong',
-                usage: '',
+                usage: '<>',
                 examples: [ 'ping' ]
             },
         });
