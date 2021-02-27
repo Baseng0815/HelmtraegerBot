@@ -9,39 +9,13 @@ class UwuListener extends Listener {
         });
 
         this.enabledIds = ['233599437635584000', '301483896711938049'];
-        this.uwus = [
-            // this bad boi will make wwwwwwwwww and nyyyyyyy
-            new Uwuifier({
-                spaces: {
-                    faces: 0,
-                    actions: 0,
-                    stutters: 0.4
-                },
-                exclamations: 0,
-                words: 1
-            }),
-            // this guy will run last and add some nice other effects *notices bulge*
-            new Uwuifier({
-                spaces: {
-                    faces: 0.2,
-                    actions: 0.07,
-                    stutters: 0
-                },
-                exclamations: 1,
-                words: 1
-            })
-        ];
+        this.uwuifier = new Uwuifier();
     }
 
     exec(message) {
         if (this.enabledIds.includes(message.author.id)) {
-            console.log("GOT MSG: " + message.content);
-            let maxUwu = message.content;
-            for (let uwu of this.uwus) {
-                console.log('a');
-                maxUwu = uwu.uwuifySentence(maxUwu);
-            }
-            message.channel.send(maxUwu);
+            let uwu = this.uwuifier.uwuifySentence(message.content);
+            message.channel.send(uwu);
         }
     }
 }
