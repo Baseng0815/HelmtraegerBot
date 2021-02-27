@@ -2,9 +2,6 @@ const { Listener } = require('discord-akairo');
 const { exec  } = require('child_process');
 const fs = require('fs');
 const log = require('../log');
-const { google } = require('googleapis');
-const service = google.youtube('v3');
-const { oauthClient } = require('../yt-auth.js');
 
 class VideosListener extends Listener {
     constructor() {
