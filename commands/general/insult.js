@@ -39,7 +39,7 @@ class RoastCommand extends Command {
         })
     }
 
-    exec(message, args) {
+    async exec(message, args) {
         const userToRoast = message.guild.members.cache.get(args.user.id);
         let randomIndex = Math.floor(Math.random() * this.roasts.length);
         message.channel.send(userToRoast.toString() + ', ' + this.roasts[randomIndex]);

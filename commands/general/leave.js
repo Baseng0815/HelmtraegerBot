@@ -12,7 +12,7 @@ class LeaveCommand extends Command {
         });
     }
 
-    exec(message) {
+    async exec(message) {
         const userChannel = message.member.voice.channel;
         const botChannel = message.guild.voice.channel;
         if (userChannel == botChannel && userChannel) {

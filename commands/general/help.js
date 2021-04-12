@@ -21,7 +21,7 @@ class HelpCommand extends Command {
         });
     }
 
-    exec(message, { command }) {
+    async exec(message, { command }) {
         if (!command) {
             // no argument given? send default help
             this.defaultHelp(message);

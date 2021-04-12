@@ -32,7 +32,7 @@ class AutistCommand extends Command {
         });
     }
 
-    exec(message, args) {
+    async exec(message, args) {
         if (args.indexOrSubcommand === 'list') {
             // list messages
             let string = '';

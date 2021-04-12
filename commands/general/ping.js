@@ -12,7 +12,7 @@ class PingCommand extends Command {
         });
     }
 
-    exec(message) {
+    async exec(message) {
         message.channel.send('Pong');
     }
 }

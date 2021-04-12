@@ -28,7 +28,7 @@ class PastaCommand extends Command {
         })
     }
 
-    exec(message, args) {
+    async exec(message, args) {
         let randomIndex = Math.floor(Math.random() * this.pastas.length);
         message.channel.send(this.pastas[randomIndex]);
     }
