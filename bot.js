@@ -1,4 +1,5 @@
 const { AkairoClient, CommandHandler, InhibitorHandler, ListenerHandler } = require('discord-akairo');
+const log = require('./log');
 
 require('dotenv').config({path: __dirname + '/.credentials/.env'});
 
@@ -38,4 +39,8 @@ class MyClient extends AkairoClient {
 
 const client = new MyClient();
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN).then(_ => {
+    log.logMessage(`INFORM: logged in successfully`);
+}, error => {
+    log.logMessage(`ERROR: couldn't log in: ${error.message}`);
+});

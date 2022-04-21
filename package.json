@@ -11,9 +11,9 @@
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "openweathermap-node": "^1.1.2",
-    "uwuifier": "^2.0.4"
+    "uwuifier": "^2.0.4",
+    "yt-dlp-wrap": "^2.3.11"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "nodemon bot.js",
     "start": "node bot.js"
