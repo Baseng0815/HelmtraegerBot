@@ -1,11 +1,13 @@
 const fs = require('fs');
 
+let logStream = fs.createWriteStream('logfile', { flags: 'a' });
+
 function logMessage(message) {
     const date = Date().toString();
 
     const logMessage = date + ': ' + message;
     console.log(logMessage);
-    fs.appendFileSync('logfile', logMessage + '\n');
+    logStream.write(logMessage);
 }
 
 module.exports.logMessage = logMessage;

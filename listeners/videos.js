@@ -15,7 +15,7 @@ class VideosListener extends Listener {
             new RegExp('^.*instagram.com/p/.*$'),
             new RegExp('^.*twitter.com/.*/status/.*$')]
 
-        this.ytDlpWrap = new YTDlpWrap('/usr/bin/yt-dlp');
+        this.ytDlpWrap = new YTDlpWrap('/home/pi/.local/bin/yt-dlp');
     }
 
     exec(message) {
@@ -30,8 +30,6 @@ class VideosListener extends Listener {
                         // download video
                         this.ytDlpWrap.execPromise([
                             message.content,
-                            '-f',
-                            'best[ext=mp4]',
                             '-o',
                             file
                         ]).then(downloadResult => {
