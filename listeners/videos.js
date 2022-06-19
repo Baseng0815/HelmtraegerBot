@@ -23,7 +23,7 @@ class VideosListener extends Listener {
             if (regex.test(message.content)) {
                 log.logMessage(`INFORM: received video link \'${message.content}\', trying to convert and send...`)
                 // first, get video info
-                this.ytDlpWrap.getVideoInfo(message.content).then(metadata => {
+                this.ytDlpWrap.getVideoInfo([message.content]).then(metadata => {
                     log.logMessage('INFORM: received metadata for video');
                     try {
                         const file = '/tmp/' + metadata.id + '.mp4';

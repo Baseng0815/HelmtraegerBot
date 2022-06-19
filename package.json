@@ -5,12 +5,12 @@
   "main": "bot.js",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "anilist-node": "^1.5.0",
+    "anilist-node": "^1.12.1",
     "discord-akairo": "^8.1.0",
-    "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.6.0",
     "fs": "0.0.1-security",
-    "openweathermap-node": "^1.1.2",
+    "openweathermap-node": "^1.2.0",
     "uwuifier": "^2.0.4",
     "yt-dlp-wrap": "^2.3.11"
   },
