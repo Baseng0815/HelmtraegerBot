@@ -1,24 +1,18 @@
 {
-  "name": "helmtraeger_bot",
+  "name": "hb",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
-  "dependencies": {
-    "@discordjs/opus": "^0.3.3",
-    "anilist-node": "^1.12.1",
-    "discord-akairo": "^8.1.0",
-    "discord.js": "^12.5.3",
-    "dotenv": "^8.6.0",
-    "fs": "0.0.1-security",
-    "openweathermap-node": "^1.2.0",
-    "uwuifier": "^2.0.4",
-    "yt-dlp-wrap": "^2.3.11"
-  },
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon bot.js",
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.14.0",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "sodium": "^3.0.2"
+  }
 }
