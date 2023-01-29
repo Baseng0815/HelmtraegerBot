@@ -6,12 +6,8 @@ const fs = require('fs');
 const path = require('path');
 
 const basePath = path.join(__dirname, '..', 'res', 'autist');
-try {
-    var files = fs.readdirSync(basePath)
-} catch (err) {
-    console.error(`Unable to open the autist folder: ${err}`);
-    return;
-}
+const files = fs.readdirSync(basePath)
+console.log(`Loaded ${files.length} autism sounds`);
 
 async function play(interaction) {
     // play sound file
